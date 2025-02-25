@@ -5,7 +5,7 @@
 
 # Warm-up for 5 minutes
 echo "Starting warm-up for 5 minutes..."
-timeout 300 bash ./scripts/fibonacci.sh #--PRINT
+#timeout 300 bash ./scripts/fibonacci.sh #--PRINT
 
 
 # Experiment 1 - DB Size: 1k, Engine: MySQL, Repeat: 30
@@ -14,11 +14,11 @@ for i in {1..30}; do
 	echo "Iteration $i of 30..."
 
 	# Start EnergiBridge and log energy usage
-	target/release/energibridge -o "Experiment1_run${i}.csv" --summary sleep 60 &
+	./../../EnergiBridge/target/release/energibridge -o "Experiment1_run${i}.csv" --summary sleep 3 > "Experiment1_joule_run${i}.txt" &
 	ENERGIBRIDGE_PID=$!
 
 	# Run SysBench
-	#sysbench_placeholder &
+	timeout 60 bash ./fibonacci.sh &
 	SYSBENCH_PID=$!
 
 	wait $ENERGIBRIDGE_PID
