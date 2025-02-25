@@ -17,12 +17,12 @@ $services = @(
 	"WinDefend",		# Windows Defender
 	"WpnService",		# Windows Push Notifications
 	"Widgets",			# Windows Widgets
-    "edgeupdate",		# Microsoft Edge Updater
-    "edgeupdatem",		# Microsoft Edge Updater
-    "WbioSrvc",			# Windows Hello Biometrics
+	"edgeupdate",		# Microsoft Edge Updater
+	"edgeupdatem",		# Microsoft Edge Updater
+	"WbioSrvc",			# Windows Hello Biometrics
 	"RemoteRegistry",	# Remote Registry Service
-    "InstallService",	# Microsoft Store Install Service
-    "WaaSMedicSvc"		# Windows Update Medic Service
+	"InstallService",	# Microsoft Store Install Service
+	"WaaSMedicSvc"		# Windows Update Medic Service
 
 	# Internet Services
 	"NlaSvc",			# Network Location Awareness

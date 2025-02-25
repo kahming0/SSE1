@@ -11,20 +11,25 @@ timeout 300 bash ./scripts/fibonacci.sh #--PRINT
 # Experiment 1 - DB Size: 1k, Engine: MySQL, Repeat: 30
 echo "Starting Experiment 1 - DB Size: 1k, Engine: MySQL, Repeat: 30..."
 for i in {1..30}; do
-    echo "Iteration $i of 30..."
+	echo "Iteration $i of 30..."
 
-    # Start EnergiBridge and log energy usage
-    target/release/energibridge -o "Experiment1_run${i}.csv" --summary sleep 60
+	# Start EnergiBridge and log energy usage
+	target/release/energibridge -o "Experiment1_run${i}.csv" --summary sleep 60 &
+	ENERGIBRIDGE_PID=$!
 
-    # Run SysBench
+	# Run SysBench
+	#sysbench_placeholder &
+	SYSBENCH_PID=$!
 
+	wait $ENERGIBRIDGE_PID
+	wait $SYSBENCH_PID
 
-    echo "Completed iteration $i"
-    echo "----------------------------"
+	echo "Completed iteration $i"
+	echo "----------------------------"
 
-    # Rest 1 minute
-    echo "Rest for 1 minute"
-    sleep 60
+	# Rest 1 minute
+	echo "Rest for 1 minute"
+	sleep 60
 done
 
 
