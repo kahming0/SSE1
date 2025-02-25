@@ -5,7 +5,7 @@
 
 # Warm-up for 5 minutes
 echo "Starting warm-up for 5 minutes..."
-#timeout 300 bash ./scripts/fibonacci.sh #--PRINT
+timeout 300 bash ./scripts/fibonacci.sh #--PRINT
 
 
 # Experiment 1 - DB Size: 1k, Engine: MySQL, Repeat: 30
