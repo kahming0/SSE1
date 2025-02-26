@@ -28,22 +28,24 @@ Stop-Process -Id $FibonacciProcess.Id -Force
 
 Write-Host "Warm-up completed!"
 
+
 # Generate all experiment combinations
 $experiments = @()
 foreach ($DB_ENGINE in $DB_ENGINES) {
-	foreach ($TABLE_SIZE in $TABLE_SIZES) {
-		for ($i = 1; $i -le $REPEATS; $i++) {
-			$experiments += [PSCustomObject]@{
-				DB_ENGINE = $DB_ENGINE
-				TABLE_SIZE = $TABLE_SIZE
-				Iteration = $i
-			}
-		}
-	}
+    foreach ($TABLE_SIZE in $TABLE_SIZES) {
+        for ($i = 1; $i -le $REPEATS; $i++) {
+            $experiments += [PSCustomObject]@{
+                DB_ENGINE = $DB_ENGINE
+                TABLE_SIZE = $TABLE_SIZE
+                Iteration = $i
+            }
+        }
+    }
 }
 
-# Shuffle the list
+# Shuffle the list of experiment combinations
 $shuffledExperiments = $experiments | Get-Random -Count $experiments.Count
+
 
 # Function to run SysBench and EnergiBridge
 function Run-Experiment {
@@ -109,7 +111,7 @@ function Run-Experiment {
         -ArgumentList "-o `"$CSV_OUTPUT_PATH`" --summary timeout 62" `
         -RedirectStandardOutput $TXT_OUTPUT_PATH
 
-    Start-Sleep -Seconds 2 # Ensure EnergiBridge starts before SysBench
+    Start-Sleep -Seconds 1 # Ensure EnergiBridge starts before SysBench
 
     # Run SysBench benchmark
     Write-Host "Running SysBench for $DB_ENGINE..."
@@ -151,6 +153,7 @@ function Run-Experiment {
     Write-Host "Completed iteration $Iteration of $EXPERIMENT_NAME"
     Start-Sleep -Seconds 60 # Rest 1 minute between repetitions
 }
+
 
 # Run shuffled experiments
 foreach ($exp in $shuffledExperiments) {
