@@ -1,7 +1,7 @@
 # Ensure script runs with administrator privileges
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-	Start-Process powershell.exe -ArgumentList "-File `"$PSCommandPath`"" -Verb RunAs
-	exit
+    Start-Process powershell.exe -ArgumentList "-File `"$PSCommandPath`"" -Verb RunAs
+    exit
 }
 
 
@@ -153,7 +153,6 @@ function Run-Experiment {
     Write-Host "Completed iteration $Iteration of $EXPERIMENT_NAME"
     Start-Sleep -Seconds 60 # Rest 1 minute between repetitions
 }
-
 
 # Run shuffled experiments
 foreach ($exp in $shuffledExperiments) {
