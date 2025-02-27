@@ -30,10 +30,10 @@ ENERGIBRIDGE_PATH = r"C:\Users\kevin\Documents\University\MSc Computer Science\C
 
 # Warm-up for 5 minutes using Fibonacci script
 print("Starting warm-up for 5 minutes...")
-FIBONACCI_SCRIPT_PATH = r"C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\EnergiBridge\fibonacci.ps1"
-subprocess.run(["powershell", "Unblock-File", "-Path", FIBONACCI_SCRIPT_PATH])
+FIBONACCI_SCRIPT_PATH = r"C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\SSE1\scripts\fibonacci.ps1"
+subprocess.run(["powershell", "Unblock-File", "-Path", f'"{FIBONACCI_SCRIPT_PATH}"'])
 fib_process = subprocess.Popen(["powershell", "-File", FIBONACCI_SCRIPT_PATH])
-time.sleep(300)
+time.sleep(1)
 fib_process.terminate()
 print("Warm-up completed!")
 
@@ -49,9 +49,9 @@ def run_experiment(db_engine, table_size, iteration):
     # Drop existing SysBench tables
     print(f"Dropping SysBench tables for {db_engine}...")
     if db_engine == "mysql":
-        drop_command = f'wsl mysql -u {DB_USER} -p"{DB_PASSWORD}" -D {DB_NAME} -e "DROP TABLE IF EXISTS sbtest1, sbtest2, sbtest3;"'
+        drop_command = f'wsl mysql -u {DB_USER} -p"{DB_PASSWORD}" -D {DB_NAME} -e "DROP TABLE IF EXISTS sbtest1, sbtest2, sbtest3, sbtest4, sbtest5, sbtest6, sbtest7, sbtest8, sbtest9, sbtest10, sbtest11, sbtest12, sbtest13, sbtest14, sbtest15, sbtest16, sbtest17, sbtest18, sbtest19, sbtest20, sbtest21, sbtest22, sbtest23, sbtest24;"'
     else:
-        drop_command = f'wsl psql -U {DB_USER} -d {DB_NAME} --no-password -c "DROP TABLE IF EXISTS sbtest1, sbtest2, sbtest3 CASCADE;"'
+        drop_command = f'wsl psql -U {DB_USER} -d {DB_NAME} --no-password -c "DROP TABLE IF EXISTS sbtest1, sbtest2, sbtest3, sbtest4, sbtest5, sbtest6, sbtest7, sbtest8, sbtest9, sbtest10, sbtest11, sbtest12, sbtest13, sbtest14, sbtest15, sbtest16, sbtest17, sbtest18, sbtest19, sbtest20, sbtest21, sbtest22, sbtest23, sbtest24 CASCADE;"'
     
     subprocess.run(drop_command, shell=True)
 
