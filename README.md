@@ -12,8 +12,8 @@
 
 # Running the Experiment (Windows)
 
-- replace the placeholder values for the file paths and database credentials in  `scripts/run_experiment_shuffle_queries.ps1`, with your own values.
-- run `scripts/run_experiment_shuffle_queries.ps1` using the following command in a PowerShell terminal window:
+- replace the placeholder values for the file paths and database credentials in  `scripts\run_experiment_shuffle_queries.ps1`, with your own values.
+- run `scripts\run_experiment_shuffle_queries.ps1` using the following command in a PowerShell terminal window:
 `.\scripts\run_experiment_shuffle_queries.ps1`.
 
 # Running the Experiment (Linux / WSL)
