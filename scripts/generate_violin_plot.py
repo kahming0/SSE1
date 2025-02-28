@@ -2,7 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file_path = "../results/processed/extracted_joules_results.csv"
+gen_for_linux = False
+
+if gen_for_linux:
+	file_path = "../results/processed/extracted_joules_results_linux.csv"
+else:
+	file_path = "../results/processed/extracted_joules_results.csv"
 df = pd.read_csv(file_path)
 df["db_size"] = df["db_size"].astype(str)
 sns.set_theme(style="whitegrid")
@@ -41,7 +46,10 @@ axes[1].set_ylabel("")
 axes[1].set_xticks(pgsql_ticks)
 axes[1].set_xticklabels(pgsql_labels)
 
-h2h_plot_path = "../results/processed/h2h_joule_violinbox.png"
+if gen_for_linux:
+	h2h_plot_path = "../results/processed/h2h_joule_violinbox_linux.png"
+else:
+	h2h_plot_path = "../results/processed/h2h_joule_violinbox.png"
 plt.savefig(h2h_plot_path, dpi=300)
 plt.close()
 
