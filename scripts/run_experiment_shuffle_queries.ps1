@@ -12,7 +12,7 @@ $DB_NAME = "sysbench"
 $DB_ENGINES = @("mysql", "pgsql")
 $TABLE_SIZES = @("1000", "10000", "100000")
 $REPEATS = 30
-$NUM_OF_QUERIES = 1000
+$NUM_OF_TRANSACTIONS = 1000
 $ENERGIBRIDGE_PATH = "C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\EnergiBridge\energibridge.exe"
 
 
@@ -125,7 +125,7 @@ function Run-Experiment {
             --tables=24 `
             --table-size=$TABLE_SIZE `
             --threads=1 `
-            --events=$NUM_OF_QUERIES `
+            --events=$NUM_OF_TRANSACTIONS `
             run
     } elseif ($DB_ENGINE -eq "pgsql") {
         & wsl sysbench oltp_read_write `
@@ -136,7 +136,7 @@ function Run-Experiment {
             --tables=24 `
             --table-size=$TABLE_SIZE `
             --threads=1 `
-            --events=$NUM_OF_QUERIES `
+            --events=$NUM_OF_TRANSACTIONS `
             run
     }
 
