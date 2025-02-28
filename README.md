@@ -17,9 +17,9 @@
 `.\scripts\run_experiment_shuffle_queries.ps1`.
 
 # Running the Experiment (Linux)
-- replace the placeholder values for the file paths and database credentials in  `scripts\run_experiment_linux.sh`, with your own values.
-- run `scripts\run_experiment_linux.sh` using the following command in a Linux terminal:
-`.\scripts\run_experiment_linux.sh`.
+- replace the placeholder values for the file paths and database credentials in  `scripts\run_experiment_linux_queries.sh`, with your own values.
+- run `scripts\run_experiment_linux_queries.sh` using the following command in a Linux terminal:
+`.\scripts\run_experiment_linux_queries.sh`.
 
 # Generate Results
 
