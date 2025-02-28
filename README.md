@@ -32,3 +32,5 @@
     - ```python generate_violin_plot.py```.
     - ```python generate_violin_plot_2.py```.
  - view the plots in `results/processed`.
+
+Note* this is set up for the windows setup by default, in order to generate tables for Linux you must open the python files and change the gen_for_linux variable to True.
