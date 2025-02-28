@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file_path = "results/processed/extracted_joules_results.csv"
+file_path = "../results/processed/extracted_joules_results.csv"
 df = pd.read_csv(file_path)
 
 sns.set_theme(style="whitegrid")
@@ -24,7 +24,7 @@ plt.xlabel("Database Size")
 plt.ylabel("Joules")
 plt.xticks(ticks=range(len(mysql_labels)), labels=mysql_labels)
 
-mysql_plot_path = "mysql_joule_violinbox.png"
+mysql_plot_path = "../results/processed/mysql_joule_violinbox.png"
 plt.savefig(mysql_plot_path, dpi=300)
 plt.close()
 
@@ -41,7 +41,7 @@ plt.xlabel("Database Size")
 plt.ylabel("Joules")
 plt.xticks(ticks=range(len(pgsql_labels)), labels=pgsql_labels)
 
-pgsql_plot_path = "pgsql_joule_violinbox.png"
+pgsql_plot_path = "../results/processed/pgsql_joule_violinbox.png"
 plt.savefig(pgsql_plot_path, dpi=300)
 plt.close()
 

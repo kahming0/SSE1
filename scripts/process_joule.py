@@ -2,7 +2,7 @@ import os
 import re
 import pandas as pd
 
-directory = "results/raw"
+directory = "../results/raw"
 joule_pattern = re.compile(r"Energy consumption in joules:\s*([\d.]+)")
 data = []
 
@@ -24,5 +24,5 @@ for engine in ["mysql", "pgsql"]:
 df = pd.DataFrame(data)
 print(df)
 
-output_csv = "extracted_joules_results.csv"
+output_csv = "../results/processed/extracted_joules_results.csv"
 df.to_csv(output_csv, index=False)
