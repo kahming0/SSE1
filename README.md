@@ -8,7 +8,7 @@
 - Additional resources on running sysbench on PostgreSQL can be found [here](https://severalnines.com/blog/how-benchmark-postgresql-performance-using-sysbench/). You can mimic the behavior in MySQL.
 
 > [!NOTE]  
-> In our WSL experiment Energibridge was installed on windows, rather then WSL, therefore you would have to make adjustments to the `scripts\run_experiment_shuffle_queries.ps1` script. 
+> In our WSL experiment Energibridge was installed on windows, rather then WSL, therefore you would have to make adjustments to the `scripts\run_experiment_shuffle_queries.ps1` script, if your Energibridge executable is on WSL.
 
 # Running the Experiment (WSL)
 
