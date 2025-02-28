@@ -1,0 +1,3 @@
+
+Waiting for 10 seconds, press a key to continue ... 9 8 7 6 5 4 3 2 1 0
+Energy consumption in joules: 28.77496337890625 for 9.441601 sec of execution.
