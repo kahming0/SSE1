@@ -1,20 +1,20 @@
 # Define database parameters
-DB_USER="sbtest"
-DB_PASSWORD="password"
-DB_NAME="sbtest"
+DB_USER="<db_user>"
+DB_PASSWORD="<db_password>"
+DB_NAME="<db_name>"
 DB_ENGINES="mysql pgsql"
 TABLE_SIZES="1000 10000 100000"
 NUM_TABLES=24
 RUNTIME=60
 REPEATS=30
-ENERGIBRIDGE_PATH="/home/bwmfvanveen/tudelft_projects/energibridge"
-OUT_PATH="/home/bwmfvanveen/tudelft_projects/sse_project_1/SSE1/results"
+ENERGIBRIDGE_PATH="<path/to/energibridge>"
+OUT_PATH="<path/to/results>"
 
 
 # Warm-up for 5 minutes using Fibonacci script
 echo "Starting warm-up for 5 minutes..."
 
-FIBONACCI_SCRIPT_PATH="fibonacci.sh"
+FIBONACCI_SCRIPT_PATH="<path/to/fibonacci.sh>"
 ./$FIBONACCI_SCRIPT_PATH & sleep 300 ; kill $!
 
 # Generate all experiment combinations

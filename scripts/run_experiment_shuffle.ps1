@@ -6,19 +6,19 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 
 # Define database parameters
-$DB_USER = "myuser"
-$DB_PASSWORD = "mypassword"
-$DB_NAME = "sysbench"
+$DB_USER = "<db_user>"
+$DB_PASSWORD = "<db_password>"
+$DB_NAME = "<db_name>"
 $DB_ENGINES = @("mysql", "pgsql")
 $TABLE_SIZES = @("1000", "10000", "100000")
 $REPEATS = 30
-$ENERGIBRIDGE_PATH = "C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\EnergiBridge\energibridge.exe"
+$ENERGIBRIDGE_PATH = "<path\to\energibridge.exe>"
 
 
 # Warm-up for 5 minutes using Fibonacci script
 Write-Host "Starting warm-up for 5 minutes..."
 
-$FIBONACCI_SCRIPT_PATH = "C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\EnergiBridge\fibonacci.ps1"
+$FIBONACCI_SCRIPT_PATH = "<path\to\fibonacci.ps1>"
 
 Unblock-File -Path $FIBONACCI_SCRIPT_PATH
 
@@ -100,9 +100,9 @@ function Run-Experiment {
     # Start EnergiBridge and log energy consumption
     Write-Host "Starting EnergiBridge for $EXPERIMENT_NAME, iteration $Iteration..."
 
-    $CSV_OUTPUT_PATH = "C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\EnergiBridge\results_${EXPERIMENT_NAME}_$Iteration.csv"
-    $TXT_OUTPUT_PATH = "C:\Users\kevin\Documents\University\MSc Computer Science\CS 24-25\Quarter 3\CS4575 Sustainable Software Engineering\EnergiBridge\joule_${EXPERIMENT_NAME}_$Iteration.txt"
-
+    $CSV_OUTPUT_PATH = "<path\to\output\dir\_${EXPERIMENT_NAME}_$Iteration.csv>"
+    $TXT_OUTPUT_PATH = "<path\to\output\dir\_${EXPERIMENT_NAME}_$Iteration.txt>"
+    
     # Start EnergiBridge
     $energiBridgeProcess = Start-Process `
         -NoNewWindow `
